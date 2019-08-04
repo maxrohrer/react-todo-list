@@ -2,10 +2,10 @@ import React from 'react'
 
 const Todos = (props) => {
 
-  const todoList = todos.length ? (
-    todos.map(todo => {
+  const todoList = props.todos.length ? (
+    props.todos.map(todo => {
       return (
-        <div className="collection-item" key={todo.id}>
+        <div className="collection-item" key={todo.id} onClick={() => {props.deleteTodo(todo.id)}}>
           <span>{todo.content}</span>
         </div>
       )
@@ -21,4 +21,4 @@ const Todos = (props) => {
   )
 }
 
-export default
+export default Todos
